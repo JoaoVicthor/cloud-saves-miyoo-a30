@@ -1,0 +1,7 @@
+{
+"label":"Cloud Resync",
+"icon":"cloudup.png",
+"iconsel":"",
+"launch":"launch.sh",
+"description":"Resync local saves to cloud."
+}

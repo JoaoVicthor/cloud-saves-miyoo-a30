@@ -1,7 +1,0 @@
-{
-"label":"Cloud Download",
-"icon":"clouddown.png",
-"iconsel":"",
-"launch":"launch.sh",
-"description":"Downloads cloud saves to device"
-}

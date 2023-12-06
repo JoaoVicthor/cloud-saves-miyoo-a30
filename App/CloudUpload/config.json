@@ -1,7 +1,0 @@
-{
-"label":"Cloud Upload",
-"icon":"cloudup.png",
-"iconsel":"",
-"launch":"launch.sh",
-"description":"Uploads saves to cloud storage"
-}
