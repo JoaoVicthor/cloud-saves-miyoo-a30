@@ -1,1 +1,1 @@
-/mnt/SDCARD/rclone bisync --buffer-size 8Mi --transfers 2 -P -L --no-check-certificate --config /mnt/SDCARD/rclone.conf --workdir /mnt/SDCARD/.cache/rclone/bisync --verbose /mnt/SDCARD/Saves/CurrentProfile/saves cloud:saves
+/mnt/SDCARD/rclone bisync --buffer-size 8Mi --transfers 2 -P -L --no-check-certificate --config /mnt/SDCARD/rclone.conf --workdir /mnt/SDCARD/.cache/rclone/bisync --verbose --recover /mnt/SDCARD/Saves/saves cloud:saves

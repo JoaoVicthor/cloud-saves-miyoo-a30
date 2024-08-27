@@ -1,7 +1,11 @@
 #!/bin/sh
-echo $0 $*
-LD_PRELOAD=/mnt/SDCARD/miyoo/lib/libpadsp.so /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Syncing saves" -m "Save syncing in progress..." --auto &
 
-cd $(dirname "$0")
-LD_PRELOAD=/mnt/SDCARD/miyoo/lib/libpadsp.so ./command.sh && /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Syncing saves" -m "Saves synced successfully!" --auto || /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Syncing saves" -m "Save syncing failed!"
+IMAGE_PATH="/mnt/SDCARD/App/CloudSync/syncing.png"
+IMAGE_SUCC="/mnt/SDCARD/App/CloudSync/success.png"
+IMAGE_FAIL="/mnt/SDCARD/App/CloudSync/failed.png"
 
+show "$IMAGE_PATH" &
+
+./command.sh && (show "$IMAGE_SUCC" & sleep 3)  || (show "$IMAGE_FAIL" & sleep 3)
+
+killall -9 show

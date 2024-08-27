@@ -1,7 +1,6 @@
 {
 "label":"Cloud Sync",
 "icon":"clouddown.png",
-"iconsel":"",
 "launch":"launch.sh",
 "description":"Sync local saves with cloud."
 }

@@ -1,7 +1,11 @@
 #!/bin/sh
-echo $0 $*
-LD_PRELOAD=/mnt/SDCARD/miyoo/lib/libpadsp.so /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Resyncing saves" -m "Save resyncing in progress..." --auto &
 
-cd $(dirname "$0")
+IMAGE_PATH="/mnt/SDCARD/App/CloudResync/resyncing.png"
+IMAGE_SUCC="/mnt/SDCARD/App/CloudResync/success.png"
+IMAGE_FAIL="/mnt/SDCARD/App/CloudResync/failed.png"
 
-LD_PRELOAD=/mnt/SDCARD/miyoo/lib/libpadsp.so ./command.sh && /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Resyncing saves" -m "Saves resynced successfully!" --auto || /mnt/SDCARD/.tmp_update/bin/infoPanel -t "Resyncing saves" -m "Save resyncing failed!"
+show "$IMAGE_PATH" &
+
+./command.sh && (show "$IMAGE_SUCC" & sleep 3)  || (show "$IMAGE_FAIL" & sleep 3)
+
+killall -9 show
